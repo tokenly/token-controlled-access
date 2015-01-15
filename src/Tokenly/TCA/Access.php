@@ -2,6 +2,7 @@
 
 namespace Tokenly\TCA;
 use Exception;
+use Config;
 use Tokenly\XChainClient\Client;
 
 class Access
@@ -10,7 +11,7 @@ class Access
 	
 	function __construct()
 	{
-		$config = require(file_exists(APPLICATION_ROOT.'/lib/config.php') ? APPLICATION_ROOT.'/lib/config.php' : APPLICATION_ROOT.'/lib/config.dist.php');
+		$config = Config('tokenly');
 		if(empty($config['xchain']['api_token'])){
 			throw new Exception('XChain API Token and API Secret required');
 		}
