@@ -48,7 +48,10 @@ class Access
 			$address = array($address);
 		}
 		foreach($address as $addr){
-			$balanceList[$addr] = $this->client->getBalances($addr);
+			if(isset(self::$balances[$addr])){
+				self::$balances[$addr] = $this->client->getBalances($addr);
+			}
+			$balanceList[$addr] = self::$balances[$addr];
 		}
 		if($grouped){
 			$groupList = array();
