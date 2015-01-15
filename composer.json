@@ -1,0 +1,23 @@
+{
+    "name": "tokenly/tca",
+    "description": "Library for providing Token Controlled Access functionality",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nick Rathman",
+            "email": "nrathman@ironcladtech.ca",
+            "homepage": ""
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "tokenly/xchain-client": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4"
+    },
+    "autoload": {
+        "psr-0": {"Tokenly\\TCA": "src"}
+    }
+}
