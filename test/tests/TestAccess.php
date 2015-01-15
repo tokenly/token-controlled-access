@@ -11,7 +11,7 @@ class TestAccess extends PHPUnit_Framework_TestCase
 		$address = '15fx1Gqe4KodZvyzN6VUSkEmhCssrM1yD7';
 		$conditions = array(array('asset' => 'LTBCOIN', 'amount' => 50000, 'op' => '>', 'stackOp' => 'AND'));
 		
-		$this->assertEquals(true, $tca->checkAccess($address, $conditions);
+		$this->assertEquals(true, $tca->checkAccess($address, $conditions));
 	}
 	
 }
