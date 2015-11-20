@@ -30,9 +30,14 @@ class Access
 	 * 
 	 * @return bool
 	 */
-	public function checkAccess($address, $conditions = array())
+	public function checkAccess($address, $conditions = array(), $balances = false)
 	{
-		$getBalances = $this->getAddressBalances($address);
+		if($balances !== false){
+			$getBalances = $this->getAddressBalances($address);
+		}
+		else{
+			$getBalances = $balances;
+		}
 		$stack = array();
 		foreach($conditions as $lock){
 			$hasReq = $this->parseLock($getBalances, $lock);
