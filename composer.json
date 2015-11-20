@@ -1,13 +1,12 @@
 {
-    "name": "tokenly/tca",
+    "name": "tokenly/token-controlled-access",
     "description": "Library for providing Token Controlled Access functionality",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Nick Rathman",
-            "email": "nrathman@ironcladtech.ca",
-            "homepage": ""
+            "email": "nrathman@ironcladtech.ca"
         }
     ],
     "require": {
