@@ -8,17 +8,13 @@ use Tokenly\XChainClient\Client;
 class Access
 {
 	static $balances = array();
+	protected $client = false;
 	
-	function __construct()
+	function __construct($load_client = false)
 	{
-		$config = Config('tokenly');
-		if(empty($config['xchain']['api_token'])){
-			throw new Exception('XChain API Token and API Secret required');
+		if($load_client){
+			$this->client = new Client(env('XCHAIN_CONNECTION_URL'), env('XCHAIN_API_TOKEN'), env('XCHAIN_API_KEY'));
 		}
-		$this->api_url = $config['xchain']['url'];
-		$this->api_token = $config['xchain']['api_token'];
-		$this->api_secret = $config['xchain']['api_secret'];
-		$this->client = new Client($this->api_url, $this->api_token, $this->api_secret);
 	}
 	
 	/**
