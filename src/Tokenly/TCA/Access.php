@@ -20,13 +20,14 @@ class Access
 	/**
 	 * Checks if one or more addresses meet the defined Token-Access conditions. Returns true or false
 	 * 
-	 * @param $address string|array - can be a single BTC address or a string of addresses
 	 * @param $conditions array
+	 * @param $balances array - array of token balances (e.g from a cached table)
+	 * @param $address string|array - can be a single BTC address or a string of addresses
 	 * @example $conditions = array(array('asset' => 'ASSET', 'amount' => 5000, 'op' => '=', 'stackOp' => 'AND'));
 	 * 
 	 * @return bool
 	 */
-	public function checkAccess($address, $conditions = array(), $balances = false)
+	public function checkAccess($conditions = array(), $balances = false, $address = false)
 	{
 		if($balances !== false){
 			$getBalances = $this->getAddressBalances($address);
