@@ -29,7 +29,7 @@ class Access
 	 */
 	public function checkAccess($conditions = array(), $balances = false, $address = false)
 	{
-		if($balances !== false){
+		if($balances === false){
 			$getBalances = $this->getAddressBalances($address);
 		}
 		else{
