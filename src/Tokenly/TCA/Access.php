@@ -51,7 +51,7 @@ class Access
 			$address = array($address);
 		}
 		foreach($address as $addr){
-			if(isset(self::$balances[$addr])){
+			if(!isset(self::$balances[$addr])){
 				self::$balances[$addr] = $this->client->getBalances($addr);
 			}
 			$balanceList[$addr] = self::$balances[$addr];
@@ -60,6 +60,7 @@ class Access
 			$groupList = array();
 			foreach($balanceList as $addr => $bal){
 				foreach($bal as $asset => $quantity){
+					$quantity = intval(round($quantity * 100000000));
 					if(!isset($groupList[$asset])){
 						$groupList[$asset] = $quantity;
 					}
