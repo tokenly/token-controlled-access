@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": ">=5.4.0",
-        "tokenly/xchain-client": "^0.2"
+        "tokenly/xchain-client": "^0"
     },
     "require-dev": {
         "phpunit/phpunit": "~4"
