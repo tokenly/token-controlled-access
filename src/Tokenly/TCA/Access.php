@@ -12,8 +12,12 @@ class Access
 	
 	function __construct($load_client = false)
 	{
-		if($load_client){
-			$this->client = new Client(env('XCHAIN_CONNECTION_URL'), env('XCHAIN_API_TOKEN'), env('XCHAIN_API_KEY'));
+		if ($load_client) {
+			if (function_exists('app') AND class_exists('Illuminate\Foundation\Application')) {
+				$this->client = app('Tokenly\XChainClient\Client');
+			} else {
+	            $this->client = new Client(env('XCHAIN_CONNECTION_URL'), env('XCHAIN_API_TOKEN'), env('XCHAIN_API_KEY'));
+			}
 		}
 	}
 	
