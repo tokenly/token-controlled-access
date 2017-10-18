@@ -10,11 +10,11 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "tokenly/xchain-client": "^0"
+        "php": ">=5.5.0",
+        "tokenly/xchain-client": "^2"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4"
+        "phpunit/phpunit": "~6"
     },
     "autoload": {
         "psr-0": {"Tokenly\\TCA": "src"}

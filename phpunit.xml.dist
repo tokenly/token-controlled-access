@@ -1,6 +1,6 @@
 <phpunit bootstrap="./test/bootstrap.php" colors="true" backupGlobals="false">
     <testsuites>
-        <testsuite name="utpid">
+        <testsuite name="tca">
             <directory>test/tests</directory>
         </testsuite>
     </testsuites>
